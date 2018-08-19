@@ -1,0 +1,15 @@
+.header-container {
+    width:100%;
+    height: 500px;
+    background: url('/assets/images/hero-background.jpg');
+    background-position: center;
+    background-size:cover;
+    margin-top: -100px;
+  }
+
+.header-container h1 {
+    color:white;
+    padding: 50px;
+    padding-top: 170px;
+  }
+  
