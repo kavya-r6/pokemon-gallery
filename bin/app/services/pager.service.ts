@@ -1,10 +1,9 @@
 import * as _ from 'underscore';
 
 export class PagerService {
-    getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
+    getPager(totalItems: number, currentPage: number = 1, pageSize: number = 20) {
         // calculate total pages
         const totalPages = Math.ceil(totalItems / pageSize);
-        console.log(totalPages);
         let startPage: number, endPage: number;
         if (totalPages <= 5) {
             startPage = 1;
@@ -32,9 +31,7 @@ export class PagerService {
         const endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
 
         // create an array of pages to ng-repeat in the pager control
-        console.log(startPage + 'dg' + endPage );
         const pages = Array.from(Array((endPage + 1) - startPage).keys()).map(i => startPage + i);
-        console.log(pages);
 
         // return object with all pager properties required by the view
         return {

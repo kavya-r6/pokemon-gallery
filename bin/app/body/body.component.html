@@ -4,39 +4,38 @@
   </div>
 </div>
 <div class="container">
-  <div calss="row col-xs-12">
-    <div class="input-group">
-      <input class="form-control" [(ngModel)]="searchText" placeholder="Search Pokemon" (keyup)="search()">  
-    </div>
-    <div class="text-center">
-      <ul *ngIf="pager.pages && pager.pages.length" class="pagination"> 
-          <li [ngClass]="{disabled:pager.currentPage === 1}">
-              <a (click)="setPage(1)">First</a>
-          </li>
-          <li [ngClass]="{disabled:pager.currentPage === 1}">
-              <a (click)="setPage(pager.currentPage - 1)">Previous</a>
-          </li>
-          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-              <a (click)="setPage(page)">{{page}}</a>
-          </li>
-          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-              <a (click)="setPage(pager.currentPage + 1)">Next</a>
-          </li>
-          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-              <a (click)="setPage(pager.totalPages)">Last</a>
-          </li>
-      </ul>
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="searchText" placeholder="Search Pokemon" (keyup)="search()">  
   </div>
+  <div class="text-center">
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination"> 
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)">First</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)">Next</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)">Last</a>
+        </li>
+    </ul>
   </div>
   <div class= "container" *ngIf="loadingMessage">
     Loading.....
   </div>
-  <div class="container">
-  <div class="row">
-  <div *ngFor="let pokemon of listOfPokemonsToDisplay" class="col-12 col-md-6 col-xl-3">
-    <img src="/assets/images/{{pokemon.id}}.png">
-      {{pokemon.id}}. {{pokemon.name}}
-  </div>
-  </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div *ngFor="let pokemon of listOfPokemonsToDisplay" class="col-12 col-md-3 col-xl-3">
+      <img src="/assets/images/{{pokemon.id}}.png">
+        {{pokemon.id}}. {{pokemon.name}}
+    </div>
+  </div>
 </div>
