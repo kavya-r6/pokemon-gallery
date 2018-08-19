@@ -68,7 +68,7 @@ export class BodyComponent implements OnInit {
   }
 
   search() {
-    this.filteredPokemons = this.pokemons.filter(pokemons => pokemons.name.indexOf(this.searchText) !== -1);
+    this.filteredPokemons = this.pokemons.filter(pokemons => pokemons.name.indexOf(this.searchText.toLocaleLowerCase()) !== -1);
     this.setPage(1);
   }
 }
