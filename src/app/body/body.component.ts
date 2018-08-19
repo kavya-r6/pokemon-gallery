@@ -17,7 +17,6 @@ export class BodyComponent implements OnInit {
   alerts: any[] = [];
   pager: any = {};
   searchText: string;
-  loadingMessage = true;
 
     // paged items
   listOfPokemonsToDisplay: any[];
