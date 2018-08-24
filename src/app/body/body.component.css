@@ -2,12 +2,11 @@ a {
     cursor: pointer;
 }
 
-.pokeman {
+.pokemon {
 	align-items: center;
 	text-align: center;
 }
 
-.pokeman img {
-	/*background-color: #f0f0f0;*/
+.pokemon img {
 	border-radius: 10px;
 }

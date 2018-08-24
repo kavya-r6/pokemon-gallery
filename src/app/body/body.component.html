@@ -33,15 +33,15 @@
 
 <div class="container">
   <div class="row">
-    <div *ngFor="let pokemon of listOfPokemonsToDisplay" class="col col-sm-3 col-md-6 col-lg-3 col-xl-3">
-      <div class="pokeman">
+    <div class="col-12 col-md-6 col-lg-3 col-xl-3" *ngFor="let pokemon of listOfPokemonsToDisplay">
+      <div class="pokemon">
         <img src="/assets/images/{{pokemon.id}}.png">
       </div>
-      <div class="pokeman">
+      <div class="pokemon">
         <span>#{{pokemon.id}} </span>
          <span>{{pokemon.name}} </span>
       </div>
-        
     </div>
+    <div class="col-12"><br/></div>
   </div>
-</div>
+  </div>
